@@ -1,0 +1,131 @@
+header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3rem;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #000314;
+    color: #fff;
+}
+
+.main_container { 
+    height: 150vh;
+    width: 100%;
+    /* max-width: 500px; */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.session_canva{
+    height: 80%;
+    width: 45%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.session_inputs{ 
+    height: 80%;
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.vision_point_C { 
+
+}
+
+.form__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+  }
+  
+.form__input {
+    margin-top: 2vh;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1rem;
+        /* margin: 0 auto; */
+    padding: 0.9rem 1rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    /* border: none; */
+    width: 20%;
+    display: block;
+    /* border-bottom: 0.3rem solid transparent; */
+    transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+
+.button_style {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  margin-top: 3vh;
+}
+
+.button_style:hover,
+.button_style:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button_style:hover {
+  transform: translateY(-1px);
+}
+
+.button_style:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}

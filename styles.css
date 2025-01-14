@@ -45,9 +45,9 @@ body {
     overflow: auto;
 }
 
-.vision_point_C { 
+/* .vision_point_C { 
 
-}
+} */
 
 .form__label {
     font-family: 'Roboto', sans-serif;
@@ -64,14 +64,11 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #333;
     font-size: 1rem;
-        /* margin: 0 auto; */
     padding: 0.9rem 1rem;
     border-radius: 0.2rem;
     background-color: rgb(255, 255, 255);
-    /* border: none; */
     width: 20%;
     display: block;
-    /* border-bottom: 0.3rem solid transparent; */
     transition: all 0.3s;
 }
 

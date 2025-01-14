@@ -1,4 +1,8 @@
+
+function calculateProjection(vertices, camera, plane) { 
     
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const surfacesContainer = document.getElementById("surfaces-inputs");
     const addSurfaceBtn = document.getElementById("add-surface");
@@ -21,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const z = document.getElementById(`z${i}`).value;
             vertices_data.push([x, y, z]);
         }
+        return vertices_data;
     }
 
     function collectSurfaceData() { 
@@ -31,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .map(vertexId => parseInt(vertexId.trim()));
             surfaces_data.push({surfaces: surfaceCount,verticessss: numVertices, vertices: surfaceVertices });
         }
+        return surfaces_data;
     }
 
     addVertexBtn.addEventListener("click", () => {
@@ -91,8 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const sendDataBtn = document.getElementById("send-data");
     sendDataBtn.addEventListener("click", () => {
-        collectSurfaceData();
-        collectVerticesData();
+        surface_data = collectSurfaceData();
+        vertice_data = collectVerticesData();
 
         console.log("Vertices Data:", vertices_data);
         console.log("Surfaces Data:", surfaces_data);

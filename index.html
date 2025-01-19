@@ -10,89 +10,148 @@
 <body>
     <script src="script.js" defer></script>
     <header>
-        <h1>Sistema de Visualização Projetivo</h1>
-        <img style="width:300px;" src="uem_logo_white.png" alt="Logo do Sistema de Visualização Projetivo">
+        <h2>Sistema de Visualização Projetivo</h2>
+        <div style="display: flex; justify-content: space-around;">
+            <button style="border-radius: 10px; padding-left: 15px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; margin-top: 0;" id="cube-example" class="button_style" type="button">
+                <div style="display: flex;">
+                    <img style="width: 50px;" src="img/cube.png">
+                    <p style="margin-left: 20px;"> Cubo</p>
+                </div>
+            </button>
+            <button style="width: 20%; border-radius: 10px; padding-left: 15px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; margin-left: 60px; margin-top: 0" id="octhaedron-example" class="button_style" type="button">
+                <div style="display: flex;">
+                    <img style="width: 50px;" src="img/octhaedron.png">
+                    <p style="margin-left: 20px;"> Octaedro</p>
+                </div>
+            </button>
+            <button style="border-radius: 10px; padding-left: 15px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; margin-left: 60px; margin-top: 0" id="pyramid-example" class="button_style" type="button">
+                <div style="display: flex;">
+                    <img style="width: 50px;" src="img/pyramid.png">
+                    <p style="margin-left: 20px;"> Pirâmide</p>
+                </div>
+            </button>
+            <button style="border-radius: 10px; padding-left: 15px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; margin-left: 60px; margin-top: 0" id="traingularPrism-example" class="button_style" type="button">
+                <div style="display: flex;">
+                    <img style="width: 50px;" src="img/triangular_prism.png">
+                    <p style="margin-left: 20px;"> Prisma Triângular</p>
+                </div>
+            </button>
+        </div>
+
+
+        <img style="width:300px;" src="img/uem_logo_white.png" alt="Logo do Sistema de Visualização Projetivo">
+        
     </header>
     <main>
         <div class="main_container">
-            <div class="session_canva">
-                <canvas style="background-color: #fff;" id="canvas" width="800" height="600"></canvas>
-            </div>
-            <div class="session_inputs">
-                <p style="font-size: 2rem; font-weight: 600;">Preencha os campos para poder gerar a projeção</p>
-                <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content;" class="vision_point_C" id="vision_point_C">
-                    <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">Digite as coordenadas do ponto de vista para definir a posição da camera</p>
-                    <div style="display: flex;justify-content: space-around;">
-                        <input class="form__input" type="number" id="input_a" placeholder="Digite o valor de a">
-                        <input class="form__input" type="number" id="input_b" placeholder="Digite o valor de b">
-                        <input class="form__input" type="number" id="input_c" placeholder="Digite o valor de c">
+            <div style="display: flex; height: 120vh;">
+                <div style="display: flex; justify-content: center; flex-direction: column;" class="session_canva">
+                    <canvas style=" background-color: #fff; max-width: 80%; max-height: 80%;height: 70%; align-self: center;" id="canvas" width="1400" height="800" tabindex="0"></canvas>
+                    <div style="display: flex; align-items: center;">
+                        <img style="width: 18%; height: 80%;" src="img/arrows.png">
+                        <h8 style="margin-left: 20px; margin-right: 20px;">OU</h8>
+                        <img style="width: 18%; height: 80%;" src="img/wasd.png">
+                        <div style="display: flex; flex-direction: column; margin-left: 15vw;">
+                            <label for="p1x">Fator de Escala:</label>
+                            <input style="margin-top: 0; width: 50%;"  class="form__input" type="number" id="scaleFactor" name="scaleFactor" min="50" step="50" placeholder="Ex: 200">
+                            <button style="width: 50%;" class="button_style" id="scaleFactor-btn" type="button">Trocar</button>
+                        </div>
                     </div>
                 </div>
-                <div class="projection_plan" id="projection_plan">
-
-                    <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content; margin-top: 5vh;">
-                        <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">P1 (Primeiro Ponto)</p>
-                        <div style="display: flex; margin-top: 2vh; justify-content: space-around;">
-                            <label for="p1x">X1:</label>
-                            <input class="form__input" type="number" id="p1x" name="p1x" step="0.1" placeholder="Ex: 1.0">
-                            <label for="p1y">Y1:</label>
-                            <input class="form__input" type="number" id="p1y" name="p1y" step="0.1" placeholder="Ex: 2.0">
-                            <label for="p1z">Z1:</label>
-                            <input class="form__input" type="number" id="p1z" name="p1z" step="0.1" placeholder="Ex: 3.0">
+                <div class="session_inputs">
+                    <p style="font-size: 2rem; font-weight: 600;">Preencha os campos para poder gerar a projeção</p>
+                    <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content;" class="vision_point_C" id="vision_point_C">
+                        <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">Digite as coordenadas do ponto de vista para definir a posição da camera</p>
+                        <div style="display: flex;justify-content: space-around;">
+                            <input class="form__input" type="number" id="input_a" placeholder="Digite o valor de a">
+                            <input class="form__input" type="number" id="input_b" placeholder="Digite o valor de b">
+                            <input class="form__input" type="number" id="input_c" placeholder="Digite o valor de c">
                         </div>
                     </div>
+                    <div class="projection_plan" id="projection_plan">
 
-                    <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content; margin-top: 5vh;">
-                        <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">P2 (Segundo Ponto)</p>
-                        <div style="display: flex; margin-top: 2vh; justify-content: space-around;">
-                            <label for="p2x">X2:</label>
-                            <input class="form__input" type="number" id="p2x" name="p2x" step="0.1" placeholder="Ex: 1.0">
-                            <label for="p2y">Y2:</label>
-                            <input class="form__input" type="number" id="p2y" name="p2y" step="0.1" placeholder="Ex: 2.0">
-                            <label for="p2z">Z2:</label>
-                            <input class="form__input" type="number" id="p2z" name="p2z" step="0.1" placeholder="Ex: 3.0">
-                        </div>
-                    </div>
-
-                    <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content; margin-top: 5vh;">
-                        <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">P3 (Terceiro Ponto)</p>
-                        <div style="display: flex; margin-top: 2vh; justify-content: space-around;">
-                            <label for="p3x">X3:</label>
-                            <input class="form__input" type="number" id="p3x" name="p3x" step="0.1" placeholder="Ex: 1.0">
-                            <label for="p3y">Y3:</label>
-                            <input class="form__input" type="number" id="p3y" name="p3y" step="0.1" placeholder="Ex: 2.0">
-                            <label for="p3z">Z3:</label>
-                            <input class="form__input" type="number" id="p3z" name="p3z" step="0.1" placeholder="Ex: 3.0">
-                        </div>
-                    </div>
-
-
-                    <div>
-                        <div id="vertices-section">
-                            <h4 style="margin-top: 4vh; margin-bottom: 0; font-size: 1.5rem;">Vértices</h4>
-                            <div id="vertices-inputs">
-                              <!-- Inputs de vértices serão adicionados aqui -->
+                        <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content; margin-top: 5vh;">
+                            <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">P1 (Primeiro Ponto)</p>
+                            <div style="display: flex; margin-top: 2vh; justify-content: space-around;">
+                                <label for="p1x">X1:</label>
+                                <input class="form__input" type="number" id="p1x" name="p1x" step="0.1" placeholder="Ex: 1.0">
+                                <label for="p1y">Y1:</label>
+                                <input class="form__input" type="number" id="p1y" name="p1y" step="0.1" placeholder="Ex: 2.0">
+                                <label for="p1z">Z1:</label>
+                                <input class="form__input" type="number" id="p1z" name="p1z" step="0.1" placeholder="Ex: 3.0">
                             </div>
-                            <button class="button_style" id="add-vertex" type="button">Adicionar Vértice</button>
-                            <button class="button_style" id="remove-vertex" type="button">Remover Último Vértice</button>
-                          </div>
-                          
-                          <div id="surfaces-section">
-                            <h4 style="margin-top: 4vh; margin-bottom: 0; font-size: 1.5rem;">Superfícies</h4>
-                            <div id="surfaces-inputs">
-                              <!-- Inputs de superfícies serão adicionados aqui -->
-                            </div>
-                            <button class="button_style" id="add-surface" type="button">Adicionar Superfície</button>
-                            <button class="button_style" id="remove-surface" type="button">Remover Última Superfície</button>
-                          </div>
-                          
-                          <div style="margin-top: 4vh; margin-bottom: 0; font-size: 1.5rem;" id="upload-section">
-                            <h4>Ou carregue um arquivo JSON</h4>
-                            <input type="file" id="upload-json" accept=".json">
-                          </div>
-                    </div>
+                        </div>
 
-                    <button style="height: 30%;background-color: rgb(124, 255, 133); width: 30%;" class="button_style" type="button" value="send-data" id="send-data">Criar Projeção</button>
+                        <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content; margin-top: 5vh;">
+                            <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">P2 (Segundo Ponto)</p>
+                            <div style="display: flex; margin-top: 2vh; justify-content: space-around;">
+                                <label for="p2x">X2:</label>
+                                <input class="form__input" type="number" id="p2x" name="p2x" step="0.1" placeholder="Ex: 1.0">
+                                <label for="p2y">Y2:</label>
+                                <input class="form__input" type="number" id="p2y" name="p2y" step="0.1" placeholder="Ex: 2.0">
+                                <label for="p2z">Z2:</label>
+                                <input class="form__input" type="number" id="p2z" name="p2z" step="0.1" placeholder="Ex: 3.0">
+                            </div>
+                        </div>
+
+                        <div style="border: 1px solid #ccc;border-radius: 5px;padding: 2vh; max-width: fit-content; margin-top: 5vh;">
+                            <p style="font-size: 1.2rem; font-weight: 500; padding: 0; margin: 0;">P3 (Terceiro Ponto)</p>
+                            <div style="display: flex; margin-top: 2vh; justify-content: space-around;">
+                                <label for="p3x">X3:</label>
+                                <input class="form__input" type="number" id="p3x" name="p3x" step="0.1" placeholder="Ex: 1.0">
+                                <label for="p3y">Y3:</label>
+                                <input class="form__input" type="number" id="p3y" name="p3y" step="0.1" placeholder="Ex: 2.0">
+                                <label for="p3z">Z3:</label>
+                                <input class="form__input" type="number" id="p3z" name="p3z" step="0.1" placeholder="Ex: 3.0">
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <div id="vertices-section">
+                                <h4 style="margin-top: 4vh; margin-bottom: 0; font-size: 1.5rem;">Vértices</h4>
+                                <div id="vertices-inputs">
+                                </div>
+                                <button class="button_style" id="add-vertex" type="button">Adicionar Vértice</button>
+                                <button class="button_style" id="remove-vertex" type="button">Remover Último Vértice</button>
+                            </div>
+                            
+                            <div id="surfaces-section">
+                                <h4 style="margin-top: 4vh; margin-bottom: 0; font-size: 1.5rem;">Superfícies</h4>
+                                <div id="surfaces-inputs">
+                                </div>
+                                <button class="button_style" id="add-surface" type="button">Adicionar Superfície</button>
+                                <button class="button_style" id="remove-surface" type="button">Remover Última Superfície</button>
+                            </div>
+                            
+                            <div style="margin-top: 4vh; margin-bottom: 0; font-size: 1.5rem; display: flex; flex-direction: column;" id="upload-section">
+                                <h4>Ou escreva um objeto contendo as informações:</h4>
+                                <textarea style="color: #757575;font-family:Tahoma ; font-size: 1.4rem;" id="projection_infos" rows="14" cols="60" ></textarea>
+                            </div>
+                        </div>
+
+                        <button style="height: 30%;background-color: rgb(124, 255, 133); width: 30%;" class="button_style" type="button" value="send-data" id="send-data">Criar Projeção</button>
+                        <button style="margin-left: 20px; height: 30%;background-color: rgb(252, 205, 52); width: 30%;" class="button_style" type="button" value="send-jon" id="send-json">Criar Projeção via texto(JSON)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="session_outputs">
+                <h2>Resultados:</h2>
+                <div style="border: 1px solid #ccc; height: auto;">
+                    <h2>Matriz do objeto (Vértices): </h3>
+                    <p class="text-resultado" id="objectVerticesMatrix"></p>
+                    <h2>Matriz do objeto (Faces): </h3>
+                    <p class="text-resultado" id="objectSurfacesMatrix"></p>
+                    <h2>Vetor normal ao plano: </h3>
+                    <p class="text-resultado" id="normalVector"></p>
+                    <h2>d0, d1, d: </h3>
+                    <p class="text-resultado" id="distances"></p>
+                    <h2>Matriz de Perspectiva: </h3>
+                    <p class="text-resultado" id="matrixPerspective"></p>
+                    <h2>Vértices em coordenadas Homogêneas: </h3>
+                    <p class="text-resultado" id="homogeneousVertices"></p>
+                    <h2>Vértices com coordenadas do dispositivo: </h3>
+                    <p class="text-resultado" id="viewportVertices"></p>
                 </div>
             </div>
         </div>
